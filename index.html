@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" type="image/png" href="logo.png" />
+    <title>IMC</title>
+
+	<script type="text/javascript" src="alert.js"></script>
+    <link href="magnific-popup.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mesure de IMC</title>
+
+<script type="text/javascript">
+<!--fonction calcule ajouté pour bouton imc  -->
+function Valider(ideal)
+   
+	{
+
+	
+	var taille = document.ideal.taille.value
+	var poids = document.ideal.poids.value
+       
+	if ((taille == "Votre taille (en cm) ici.")|| (taille == "")|| (poids == "votre poids (en kg) ici.")|| (poids == ""))   //alert si un champ n'esp pas renseigné
+           
+	     
+	         {
+                window.alert("Si vous voulez que je calcule votre indice de masse corporel ainsi que votre poids idéal il faut que vous entrez vos mensuration");
+           }
+	
+				else
+				{
+				//Fonction calcul de l'imc
+            var nombre1 = (taille*0.01)          //convertion de la taille des centimètres en mètres
+			var nombre2 = (nombre1*nombre1)      //taille au carré
+			var nombre3 = (poids/nombre2)        //poids divisé par la taille
+			
+			var nombre4 = (22*nombre2)         //22 est l'indice parfait
+			
+			alert("Votre poids idéal normalement est de: " + Math.round(nombre4) + "!");
+			
+			
+           
+			// Message d'alerte en fonction de l'imc
+			
+			if (nombre3 <= 14)
+			{
+				
+			alert("Votre indice est un trop faible, c'est à dire que vous avez trompé de vos mésures  !");
+			}
+				
+			if (nombre3 <= 16)
+			{
+				
+				alert("Votre indice est un très faible, c'est à dire que vous êtes très maigre. Il faut faire très attention, je vous recomande de voir un nutrioniste!");
+			}
+			if (nombre3 <=18 && nombre3 >16)
+			{
+				alert("Selon l’échelle de l’OMS, un IMC inférieur à 18,5 équivaut à une dénutrition. Mais tout dépend d’où on se situe par rapport à cette valeur. En effet, de nombreuses personnes minces ont un IMC proche de 18,5 avec une alimentation équilibrée : dans ces cas, il n’y a donc pas de conséquences néfastes pour leur santé. Néanmoins, un IMC très faible peut être un indice pour repérer une situation de dénutrition, dangereuse, elle, pour la santé. Il existe plusieurs facteurs de risque pour la dénutrition : précarité, grand âge, troubles du comportement alimentaire, maladies psychiatriques, etc. Seul votre médecin pourra reconnaître une dénutrition et proposer une prise en charge diététique pour arriver à assurer un apport suffisant pour couvrir les besoins de l’organisme.");
+				alert("je vous explique plus en détails")
+				alert ("Votre indice est faible, vous êtes maigre, il faut surveiller votre ligne!");
+			}
+			if (nombre3 <=20 && nombre3 >18)
+			{
+				
+			alert("C’est-à-dire que vous n’êtes ni en surpoids, ni en maigreur. Une alimentation équilibrée, un mode de vie sain et de l’exercice contribuent à une bonne santé physique.");	
+		    alert     ("je vous explique plus en détails")
+			alert           ("Vous êtes en leger sous-poids  , il faut manger!!!")
+			}
+			if (nombre3 <=24 && nombre3 >20)
+			{
+				alert("C’est-à-dire que vous n’êtes ni en surpoids, ni en maigreur. Une alimentation équilibrée, un mode de vie sain et de l’exercice contribuent à une bonne santé physique et psychique.");	
+			    alert("je vous explique plus en détails")
+				alert("Vous êtes dans la moyenne, ne vous inquietez pas!");
+			}
+			
+			if (nombre3 <=26 && nombre3 >24)
+			{
+				alert("Le surpoids est un facteur de risque bien connu pour nombre de maladies cardiovasculaires (diabète, hypertension, insuffisance cardiaque, athérosclérose, etc.). C’est pourquoi il convient de le réduire le plus possible avec un régime alimentaire adapté. Votre médecin et/ou diététicien nutritionniste vous aidera à perdre du poids dans un premier temps avant de maintenir votre poids idéal au moyen d’une alimentation équilibrée et d’une activité physique régulière.");
+			    alert("je vous explique plus en détails")
+				alert("Vous êtes en très leger sur-poids, ce n'est pas bien grave");
+			}
+			if (nombre3 <=28 && nombre3 >26)
+			{
+				alert("Le surpoids est un facteur de risque bien connu pour nombre de maladies cardiovasculaires (diabète, hypertension, insuffisance cardiaque, athérosclérose, etc.). C’est pourquoi il convient de le réduire le plus possible avec un régime alimentaire adapté. Votre médecin et/ou diététicien nutritionniste vous aidera à perdre du poids dans un premier temps avant de maintenir votre poids idéal au moyen d’une alimentation équilibrée et d’une activité physique régulière.");
+			    alert("je vous explique plus en détails")
+				alert("Vous êtes en sur-poids mais ce n'est pas iratrappable!");
+
+			}
+			if (nombre3 <=32 && nombre3 >28)
+			{
+				alert("L’obésité est un facteur de risque important pour de nombreuses maladies cardiovasculaires et réduit considérablement la qualité de vie (troubles du sommeil, troubles moteurs, etc.) et la longévité. Il est nécessaire de consulter rapidement un médecin qui, après avoir effectué les analyses nécessaires, fera un bilan de votre situation pour déterminer la meilleure approche pour perdre du poids durablement. Dans un premier temps, la prise en charge comprend un traitement médical, nutritionnel, diététique et psychothérapeutique. En cas d’IMC très élevé (IMC supérieur à 40) et/ou en seconde intention, lorsque les risques de comorbidité sont élevés, une intervention de chirurgie bariatrique peut être envisagée.");
+			    alert("je vous explique plus en détails ")
+				alert("Vous êtes en sur-poids!");
+
+			}
+			if (nombre3 >32)
+			{
+				alert("L’obésité est un facteur de risque important pour de nombreuses maladies cardiovasculaires et réduit considérablement la qualité de vie (troubles du sommeil, troubles moteurs, etc.) et la longévité. Il est nécessaire de consulter rapidement un médecin qui, après avoir effectué les analyses nécessaires, fera un bilan de votre situation pour déterminer la meilleure approche pour perdre du poids durablement. Dans un premier temps, la prise en charge comprend un traitement médical, nutritionnel, diététique et psychothérapeutique. En cas d’IMC très élevé (IMC supérieur à 40) et/ou en seconde intention, lorsque les risques de comorbidité sont élevés, une intervention de chirurgie bariatrique peut être envisagée.");
+			    alert("je vous explique plus en détails")
+				alert("Vous êtes vraiment en sur-poids, je vous conseil de voir un nutritioniste pour qu'il vous adapte un regime personnalisé.");
+
+			}
+			
+			
+		
+			alert("Votre indice de masse corporel est de: " + Math.round(nombre3) + "!");
+		        }
+    }
+    
+
+               
+</script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+  <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">                <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  <link rel="stylesheet" href="css/tooplate-style.css"><!-- tooplate style -->
+  <!-- Magnific Popup core CSS file -->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+
+      </head>
+
+      <body>
+   <header role="banner"> </header>   
+<div id="tm-section-1" class="parallax-window" data-parallax="scroll" data-image-src="img/bg-img-01.jpg">          <section class="container tm-page-1-content">
+            <div class="row">
+              <div class="col-md-6 ml-auto tm-text-white container tm-page-1-content">
+              
+                <header><h1>IMC</h1></header>
+                <p>Le poids idéal n’existe pas ! Eh oui, s’il existe effectivement plusieurs échelles permettant de l’évaluer selon divers critères, le plus important reste évidemment d’être bien dans sa peau… Hormis l’indice de masse corporelle (IMC), le seul validé par l’Organisation mondiale de la santé (OMS).</p>
+                
+                <div id=element2 >
+                <header><h2>Je Calcule Mon IMC</h2></header>
+                <b> Veuillez remplir les champs ci-dessous pour connaitre votre IMC</b>
+              
+              <form action="" method="post" name="ideal" id="ideal">
+                   <br /><br />
+                   &nbsp;&nbsp;&nbsp;<input type="text" value="Votre taille (en cm) ici." name="taille" OnFocus="this.value=''" size="20"><br /><br />
+                   &nbsp;&nbsp;&nbsp;<input type="text" value="votre poids (en kg) ici." name="poids" OnFocus="this.value=''" size="20"><br /><br />
+                   &nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-danger" value="Calculer" name="calculez"  OnClick="Valider(this.form)"><br />
+                   &nbsp;&nbsp;&nbsp;<input type="reset" class="btn btn-danger"  value="Remettre" name="  reset  " ><br /><br /><br />
+              </form>
+                </div>  
+              </div>
+            </div>
+
+          </section>
+        </div>
+
+
+        
+        <div id="tm-section-4" class="parallax-window" data-parallax="scroll" data-image-src="img/bg-img-04.jpg">
+
+          <div class="row tm-page-4-content">
+            <article  class="col-xs-6 col-md-4 tm-bg-white-transparent">
+              <header><h3>Première leçon</h3></header>
+              <p>le poids idéal n’est pas celui que l’individu se fixe mais celui que le cerveau décide, sur la base d’éléments génétiques et d’expériences de vie. «Tout comme le corps a besoin d’un certain nombre d’heures de sommeil, le cerveau a une fourchette de poids privilégiée qu’il va s’efforcer de défendre pour chacun d’entre nous».</p>
+            </article>
+            <article class="col-xs-6 col-md-4 tm-bg-white-transparent">
+              <header><h3>Seconde leçon</h3></header>
+              <p> Les régimes sont voués à l’échec. «D’après les données optimistes, 80 % des personnes qui s’efforcent de perdre du poids le reprennent dans les années qui suivent, tandis que d’autres considèrent que le taux est plus proche de 100 %».</p>
+            </article>
+            <article class="col-xs-6 col-md-4 tm-bg-white-transparent">
+              <header><h3>Troisième leçon</h3></header>
+              <p>la nature est bien faite et même si une personne a l’impression d’être en surpoids alors qu’elle mange normalement, elle ne tirera pas de bénéfice d’un régime pour sa santé.</p>
+            </article>
+          </div>
+        </div>
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-img-05.jpg">
+          <div class="container">
+            <div class="row">
+              <div class="tm-img-container">
+                <div class="tm-img-slider">
+ 
+                    
+                    <a class="image-link" href="img/gallery-img-02.jpg"><img src="img/gallery-img-02-tn.jpg" alt="Image" class="tm-slider-img"></a>
+                    <a class="image-link" href="img/gallery-img-03.jpg"><img src="img/gallery-img-03-tn.jpg" alt="Image" class="tm-slider-img"></a>  
+                    <a class="image-link" href="img/gallery-img-04.jpg"><img src="img/gallery-img-04-tn.jpg" alt="Image" class="tm-slider-img"></a>
+                    <a class="image-link" href="img/gallery-img-05.jpg"><img src="img/gallery-img-05-tn.jpg" alt="Image" class="tm-slider-img"></a>
+                    <a class="image-link" href="img/gallery-img-06.jpg"><img src="img/gallery-img-06-tn.jpg" alt="Image" class="tm-slider-img"></a>
+                      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="parallax-window tm-position-relative tm-form-section" data-parallax="scroll" data-image-src="img/bg-img-06.jpg">
+          <div class="container ">
+            <div class="row1 ">
+              <div class="col-xs-12">
+                <header><h5> Contactez Nous </h5></header>
+              </div>
+            </div>
+            <div class="row tm-page-5-content">
+              <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="contact_message">                  
+                  <form action="#contact" method="post" class="contact-form">
+                    <div class="form-group">
+                      <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Nom"  required/>
+                    </div>
+                    <div class="form-group">
+                      <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email"  required/>
+                    </div>
+                    <div class="form-group">
+                      <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-danger tm-btn-submit">Envoyer</button>
+                  </form>
+                </div>
+              </div>
+              <div class="col-lg-8 col-md-6 col-xs-12">
+                <div class="tm-address-box">
+                  <p>Envoyez nous vos commentaires et vos remarques sur notre travail.
+                  </p>
+                  <br>
+                  <address>
+                    <b>Notre Adresse</b><br>
+                    <br>
+                    06 Rougement,Paris 75009<br>
+                     France<br>
+                  </address>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer">
+              <p>Copyright © 2018 Seiph-Dridi
+                
+              </div>
+            </div>
+            
+          </div>
+
+
+          <!-- load JS files -->
+          <script src="js/jquery-1.11.3.min.js"></script>   
+          <script src="js/parallax.min.js"></script>
+          <script src="js/calculIMC.js"></script>
+          <script type="text/javascript" src="slick/slick.min.js"></script> 
+          <!-- Slick Carousel -->
+
+          <!-- Magnific Popup core JS file -->
+          <script src="js/jquery.magnific-popup.min.js"></script>
+          
+
+          <script>
+
+            function setCarousel() {
+
+              var slider = $('.tm-img-slider');
+
+              if (slider.hasClass('slick-initialized')) {
+                slider.slick('destroy');
+              }
+
+              if($(window).width() > 991){
+                  // Slick carousel
+                  slider.slick({
+                    dots: true,
+                    infinite: true,
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                  });
+                }
+                else {
+                 slider.slick({
+                  dots: true,
+                  infinite: true,
+                  slidesToShow: 2,
+                  slidesToScroll: 1
+                });
+               }
+             }
+
+             $(document).ready(function(){
+
+              setCarousel();
+              $('.tm-img-slider').magnificPopup({
+                delegate: 'a', // Des petite photos fenetre a grandir 
+                type: 'image'
+                // plus d'option 
+
+              });
+
+              $(window).resize(function() {
+                setCarousel();
+              });
+            });
+             
+            
+          </script>
+        </body>
+        </html>
